@@ -74,12 +74,12 @@ Array(50).fill().forEach(addComet);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load("../assets/bgGalaxy.jpg");
+const spaceTexture = new THREE.TextureLoader().load("assets/bgGalaxy.jpg");
 scene.background = spaceTexture;
 
 // Avatar
 
-const krisnaTexture = new THREE.TextureLoader().load("../assets/krisna.jpg");
+const krisnaTexture = new THREE.TextureLoader().load("assets/krisna.jpg");
 
 let krisna;
 
@@ -94,7 +94,7 @@ scene.add(krisna);
 if (window.screen.width < 391) {
   krisna.position.x = 0;
   krisna.position.y = 1.8;
-} else if (window.screen.width <= 768) {
+} else if (window.screen.width < 1024) {
   krisna.position.x = 0;
   krisna.position.y = 1;
 } else {
@@ -104,8 +104,8 @@ krisna.position.z = -5;
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load("../assets/moon.jpg");
-const normalTexture = new THREE.TextureLoader().load("../assets/normal.jpg");
+const moonTexture = new THREE.TextureLoader().load("assets/moon.jpg");
+const normalTexture = new THREE.TextureLoader().load("assets/normal.jpg");
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -122,7 +122,7 @@ moon.position.y = 0;
 moon.position.z = 44;
 
 // mars
-const marsTexture = new THREE.TextureLoader().load("../assets/mars.jpg");
+const marsTexture = new THREE.TextureLoader().load("assets/mars.jpg");
 
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(8, 32, 32),
