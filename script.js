@@ -32,14 +32,6 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-// Helpers
-
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
-
-// const controls = new OrbitControls(camera, renderer.domElement);
-
 function addStar() {
   const geometry = new THREE.OctahedronGeometry(0.25, 24, 24);
   const material = new THREE.MeshMatcapMaterial({ color: 0xffffff });
@@ -74,12 +66,12 @@ Array(50).fill().forEach(addComet);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/krisna31/krisna-portfolio-with-threejs/main/src/assets/bgGalaxy.jpg");
+const spaceTexture = new THREE.TextureLoader().load("assets/bgGalaxy.jpg");
 scene.background = spaceTexture;
 
 // Avatar
 
-const krisnaTexture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/krisna31/krisna-portfolio-with-threejs/main/src/assets/krisna.jpg");
+const krisnaTexture = new THREE.TextureLoader().load("assets/krisna.jpg");
 
 let krisna;
 
@@ -104,8 +96,8 @@ krisna.position.z = -5;
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/krisna31/krisna-portfolio-with-threejs/main/src/assets/moon.jpg");
-const normalTexture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/krisna31/krisna-portfolio-with-threejs/main/src/assets/normal.jpg");
+const moonTexture = new THREE.TextureLoader().load("assets/moon.jpg");
+const normalTexture = new THREE.TextureLoader().load("assets/normal.jpg");
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -122,7 +114,7 @@ moon.position.y = 0;
 moon.position.z = 44;
 
 // mars
-const marsTexture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/krisna31/krisna-portfolio-with-threejs/main/src/assets/mars.jpg");
+const marsTexture = new THREE.TextureLoader().load("assets/mars.jpg");
 
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(8, 32, 32),
