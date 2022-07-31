@@ -79,7 +79,7 @@ const krisnaTexture = new THREE.TextureLoader().load("assets/krisna.jpg");
 
 let krisna;
 
-if (window.screen.width <= 768) {
+if (window.screen.width <= 1024) {
   krisna = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ map: krisnaTexture }));
 } else {
   krisna = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: krisnaTexture }));
@@ -157,6 +157,31 @@ function moveCamera() {
 
 document.body.onscroll = moveCamera;
 moveCamera();
+
+window.addEventListener("resize", (e) => {
+  krisnaTexture.dispose();
+  scene.remove(krisna);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  if (window.screen.width <= 1024) {
+    krisna = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ map: krisnaTexture }));
+  } else {
+    krisna = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: krisnaTexture }));
+  }
+
+  if (window.screen.width < 391) {
+    krisna.position.x = 0;
+    krisna.position.y = 1.8;
+  } else if (window.screen.width < 1024) {
+    krisna.position.x = 0;
+    krisna.position.y = 1;
+  } else {
+    krisna.position.x = -2.5;
+  }
+  krisna.position.z = -5;
+
+  scene.add(krisna);
+});
 
 // Animation Loop
 
