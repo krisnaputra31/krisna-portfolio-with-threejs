@@ -5,7 +5,7 @@
   "main": "tailwind.config.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "css": "npx tailwindcss -i ./beforeStyle.css -o ./dist/style.css --minify"
+    "css": "npx tailwindcss -i ./style.css -o ./dist/style.css --minify"
   },
   "repository": {
     "type": "git",
